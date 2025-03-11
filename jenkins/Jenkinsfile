@@ -1,6 +1,8 @@
 pipeline {
     agent any
-    stages {
+    tools {
+        maven 'Maven1' // Assurez-vous que ce nom correspond à celui configuré dans Jenkins
+    }    stages {
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
